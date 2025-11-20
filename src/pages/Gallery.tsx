@@ -28,8 +28,8 @@ export const Gallery: React.FC = () => {
       <header className="gallery-header">
         <h1>UI Component Gallery</h1>
         <p>
-          A small, opinionated React UI kit showing my approach to visual
-          design, component structure, and interaction states.
+          A small, React UI kit showing my approach to visual design, component
+          structure, and interaction states.
         </p>
       </header>
 
@@ -54,7 +54,7 @@ export const Gallery: React.FC = () => {
 
       <section className="gallery-section">
         <h2>Form Inputs</h2>
-        <div className="gallery-column">
+        <div className="gallery-formGrid">
           <TextField label="Email" placeholder="you@example.com" />
           <TextField
             label="Password"
@@ -72,7 +72,7 @@ export const Gallery: React.FC = () => {
 
       <section className="gallery-section">
         <h2>Text Area</h2>
-        <div className="gallery-column">
+        <div className="gallery-narrow">
           <TextArea
             label="Long Input"
             placeholder="Description..."
@@ -83,7 +83,7 @@ export const Gallery: React.FC = () => {
 
       <section className="gallery-section">
         <h2>Autocomplete</h2>
-        <div className="gallery-column">
+        <div className="gallery-narrow">
           <Autocomplete
             label="Role"
             placeholder="Search roles..."

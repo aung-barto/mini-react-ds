@@ -6,6 +6,8 @@
   padding: 32px;
   font-family: var(--font-family);
   color: var(--color-text-primary);
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .gallery-header {
@@ -47,4 +49,21 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.gallery-description {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: -4px;
+  margin-bottom: var(--space-3);
+}
+
+.gallery-formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.gallery-narrow {
+  max-width: 420px;
 }
