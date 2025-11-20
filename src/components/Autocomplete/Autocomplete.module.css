@@ -1,0 +1,64 @@
+@import "../../tokens.css";
+
+.wrapper {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  list-style: none;
+  padding: 4px 0;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border-subtle);
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.option,
+.optionHighlighted {
+  padding: 6px 10px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.option:hover {
+  background-color: var(--color-surface-subtle);
+}
+
+.optionHighlighted {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+}
+
+.optionLabel {
+  flex: 1;
+}
+
+.emptyState {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  padding: 8px 10px;
+  font-size: var(--font-size-xs);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border-subtle);
+  color: var(--color-text-muted);
+}

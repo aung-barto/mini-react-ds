@@ -1,0 +1,29 @@
+@import "../../tokens.css";
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border: 1px solid transparent;
+}
+
+.tone-default {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border-subtle);
+}
+
+.tone-accent {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.tone-danger {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}

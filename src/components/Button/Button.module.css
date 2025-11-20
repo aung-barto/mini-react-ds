@@ -1,0 +1,94 @@
+@import "../../tokens.css";
+
+.button {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease-out,
+    border-color 120ms ease-out,
+    box-shadow 120ms ease-out,
+    transform 40ms ease-out;
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Variants */
+
+.variant-primary {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent-strong);
+  box-shadow: var(--shadow-subtle);
+}
+
+.variant-primary:hover {
+  background-color: var(--color-accent-strong);
+}
+
+.variant-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+.variant-secondary:hover {
+  background-color: var(--color-surface-subtle);
+}
+
+.variant-ghost {
+  background-color: transparent;
+  color: var(--color-neutral);
+  border-color: var(--color-neutral-soft);
+}
+
+.variant-ghost:hover {
+  background-color: var(--color-surface-subtle);
+}
+
+.variant-danger {
+  background-color: var(--color-danger);
+  color: white;
+  border-color: var(--color-danger);
+}
+
+.variant-danger:hover {
+  background-color: #991b1b;
+}
+
+/* Sizes */
+
+.size-sm {
+  padding: 3px 10px;
+  font-size: var(--font-size-xs);
+}
+
+.size-md {
+  padding: 6px 14px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
