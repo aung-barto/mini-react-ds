@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./Nav.module.css";
 
+export type PageKey = "dashboard" | "gallery" | "wizard";
+
 interface NavProps {
-  current: "gallery" | "wizard";
-  onNavigate: (page: "gallery" | "wizard") => void;
+  current: PageKey;
+  onNavigate: (page: PageKey) => void;
 }
 
 export const Nav: React.FC<NavProps> = ({ current, onNavigate }) => {
@@ -21,6 +23,12 @@ export const Nav: React.FC<NavProps> = ({ current, onNavigate }) => {
         onClick={() => onNavigate("wizard")}
       >
         Job Application Wizard
+      </button>
+      <button
+        className={current === "dashboard" ? styles.active : styles.link}
+        onClick={() => onNavigate("dashboard")}
+      >
+        Dashboard
       </button>
     </nav>
   );

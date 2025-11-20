@@ -4,7 +4,7 @@ A small, opinionated React UI kit built to demonstrate my approach to **visual d
 
 This project is intentionally minimal. It focuses on the foundations that matter most for designing and building modern B2B product interfaces: structure, hierarchy, clarity, and component reusability.
 
-Live Demo: 
+Live Demo: https://mini-react-ds.vercel.app/
 
 This UI kit is inspired by my experience working with design systems such as IBM’s Carbon Design System, while being built fully from scratch for this project.
 
