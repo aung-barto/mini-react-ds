@@ -23,14 +23,11 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
   options,
   onChange,
 }) => {
+  const rootRef = React.useRef<HTMLDivElement>(null);
   const [query, setQuery] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
   const [highlightedIndex, setHighlightedIndex] = React.useState<number | null>(
     null
-  );
-
-  const filtered = options.filter((opt) =>
-    opt.label.toLowerCase().includes(query.toLowerCase())
   );
 
   const listId = React.useId();
@@ -40,6 +37,23 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
     setIsOpen(false);
     setHighlightedIndex(null);
     onChange?.(option);
+  };
+
+  const filtered =
+    query.trim() === ""
+      ? options
+      : options.filter((opt) =>
+          opt.label.toLowerCase().includes(query.toLowerCase())
+        );
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setQuery(val);
+    if (val.trim() === "") {
+      setHighlightedIndex(-1);
+      onChange?.(null);
+    }
+    setIsOpen(true);
   };
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
@@ -68,19 +82,34 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
       handleSelect(filtered[highlightedIndex]);
     } else if (e.key === "Escape") {
       setIsOpen(false);
-      setHighlightedIndex(null);
+      setHighlightedIndex(-1);
+      return;
     }
   };
 
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      // if (!rootRef.current) return;
+      if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+        setHighlightedIndex(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={rootRef}>
       <TextField
         label={label}
         value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setIsOpen(true);
-        }}
+        onChange={handleChange}
         onFocus={() => setIsOpen(true)}
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}

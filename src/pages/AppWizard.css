@@ -95,8 +95,8 @@
 
 .aw-review-card dt {
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
 }
 
 .aw-review-card dd {
@@ -122,3 +122,24 @@
   display: flex;
   gap: var(--space-2);
 }
+
+@media (max-width: 600px) {
+  .aw-review-card dl {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-3);
+  } 
+  .aw-review-card dl > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .aw-review-card dt {
+    font-size: var(--font-size-xs);
+  }
+  .aw-review-card dd {
+    font-size: var(--font-size-sm);
+    margin: 0;
+    overflow-wrap: anywhere;
+  } 
+}
+

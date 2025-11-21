@@ -159,7 +159,6 @@ export const AppWizard: React.FC = () => {
             <Autocomplete
               label="Role you're applying for"
               placeholder="Search roles…"
-              helperText="Start typing to filter options."
               options={roles}
               onChange={(value) => setRole(value)}
             />

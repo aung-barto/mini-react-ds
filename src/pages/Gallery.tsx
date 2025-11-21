@@ -87,7 +87,6 @@ export const Gallery: React.FC = () => {
           <Autocomplete
             label="Role"
             placeholder="Search roles..."
-            helperText="Try typing “engineer”"
             options={roles}
           />
         </div>

@@ -123,7 +123,6 @@ export const Dashboard: React.FC = () => {
                 label="Status"
                 placeholder="Filter by status"
                 options={statusOptions}
-                helperText="Choose a pipeline status."
                 onChange={(opt) => setStatusFilter(opt)}
               />
             </div>
